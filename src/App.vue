@@ -5,10 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
     <h3>{{ nowTime }}</h3>
-    <p>随机出现的美女</p>
-    <img :src="result.imgUrl" alt />
     <router-view />
-    <modal> </modal>
   </div>
 </template>
 
@@ -17,12 +14,9 @@ import { defineComponent, ref, reactive, toRefs, onMounted } from "vue";
 import { nowTime, getNowTime } from "./hooks/useNowTime";
 import { useUrlAxios } from "./api/user";
 
-import modal from "./components/modal.vue";
-
 export default defineComponent({
   name: "App",
   components:{
-    modal
   },
   setup() {
     interface DataProps {
